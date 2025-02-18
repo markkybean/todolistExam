@@ -63,6 +63,7 @@ export default function Todo() {
       setTodos([...todos, { id: docRef.id, title: todoTitle }]);
       setTodoTitle("");
       setImage(null);
+      console.log("Task added:", { id: docRef.id, title: todoTitle });
     } catch (error) {
       console.error("Error adding task:", error);
     }
@@ -74,6 +75,7 @@ export default function Todo() {
   };
 
   const handleSave = async () => {
+    event.preventDefault();
     if (!todoTitle.trim()) return;
 
     try {
@@ -89,6 +91,7 @@ export default function Todo() {
 
       setTodoTitle("");
       setEditId(null);
+      console.log("Task updated:", { id: editId, title: todoTitle });
     } catch (error) {
       console.error("Error updating task:", error);
     }
