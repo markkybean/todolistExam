@@ -74,7 +74,7 @@ export default function Todo() {
     setTodoTitle(task.title);
   };
 
-  const handleSave = async () => {
+  const handleSave = async (event) => {
     event.preventDefault();
     if (!todoTitle.trim()) return;
 
